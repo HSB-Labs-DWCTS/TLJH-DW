@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 # JupyterHub for Linux installation script
 #
