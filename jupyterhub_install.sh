@@ -12,7 +12,7 @@ do_install() {
   curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin admin
   sudo tljh-config set user_environment.default_app jupyterlab
   sudo tljh-config reload hub
-  export PATH=$PATH:/opt/tljh/user/bin
+  # export PATH=$PATH:/opt/tljh/user/bin
 }
 
 #
