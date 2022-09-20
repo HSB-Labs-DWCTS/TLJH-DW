@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-# JupyterHub for Linux installation script
+# JupyterHub for Linux installation script (bare metal)
 #
 
 do_install() {
