@@ -28,6 +28,8 @@ do_install() {
   docker exec -it tljh-dev sh -c "conda install -c conda-forge jupyterlab-language-pack-ko-KR -y"
   
   docker exec -it tljh-dev /bin/bash
+  ps
+  exit
     
   # export PATH=$PATH:/opt/tljh/user/bin
 }
