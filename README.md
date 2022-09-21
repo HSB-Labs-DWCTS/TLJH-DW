@@ -17,7 +17,12 @@ docker run \
   hsblabs/tljh-dw
 ```
 
-## Login
+## Shell inside the running docker container
+```
+docker exec -it tljh-dw /bin/bash
+```
+
+## TLJH-DW Login
 Login admin
  - admin:admin123
 ```
