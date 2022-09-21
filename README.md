@@ -1,7 +1,7 @@
 # tmp
 ## Test TLJH-DW
 
-## Install Docker
+## Install Docker (wget)
 ```
 sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
 ```
