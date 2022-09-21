@@ -8,6 +8,7 @@ set -e
 
 do_install() {
   sudo usermod -aG docker $USER
+  sudo usermod -aG docker $(whoami)
 }
 
 #
