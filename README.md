@@ -12,6 +12,12 @@ sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.dock
 sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
 ```
 
+## Add Docker group
+```
+sudo usermod -a -G docker $USER
+sudo usermod -a -G docker $(whoami)
+```
+
 ## Test TLJH-dw is with Docker
 ```
 docker run \
