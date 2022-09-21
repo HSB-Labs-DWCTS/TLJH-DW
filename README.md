@@ -1,9 +1,15 @@
 # TLJH-DW
 ## Test TLJH-DW
 
-## Install Docker (wget)
+## Install Docker
+### wget
 ```
 sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
+```
+
+#curl
+```
+sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
 ```
 
 ## Test TLJH-dw is with Docker
