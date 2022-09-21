@@ -13,7 +13,12 @@ do_install() {
   sudo tljh-config set user_environment.default_app jupyterlab
   sudo tljh-config reload hub
   # export PATH=$PATH:/opt/tljh/user/bin
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR
+  
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR -y
+  sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
+  
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab jupyterlab-git -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y
 }
 
 #
