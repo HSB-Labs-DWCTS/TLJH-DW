@@ -1,7 +1,7 @@
 # TLJH-DW
 # Test TLJH-DW (Bare metal)
 
-wget 또는 curl 로 설치
+`wget` 또는 `curl` 로 설치 합니다.
 ### wget
 ```
 sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
@@ -22,6 +22,8 @@ http://{Server IP}
 # Test TLJH-DW (Docker)
 
 ## Install Docker
+
+`wget` 또는 `curl` 로 설치 합니다.
 ### wget
 ```
 sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
