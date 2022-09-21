@@ -13,6 +13,7 @@ do_install() {
   sudo tljh-config set user_environment.default_app jupyterlab
   sudo tljh-config reload hub
   # export PATH=$PATH:/opt/tljh/user/bin
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR
 }
 
 #
