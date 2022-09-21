@@ -1,6 +1,14 @@
 # TLJH-DW
 # Test TLJH-DW (Bare metal)
+### wget
+```
+sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
+```
 
+### curl
+```
+sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
+```
 
 # Test TLJH-DW (Docker)
 
