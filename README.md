@@ -16,3 +16,10 @@ docker run \
   --mount type=bind,source=$(pwd),target=/srv/src \
   hsblabs/tljh-dw
 ```
+
+## Login
+Login admin
+ - admin:admin123
+```
+http://{Server IP}:12000
+```
