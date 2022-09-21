@@ -1,5 +1,7 @@
 # TLJH-DW
 # Test TLJH-DW (Bare metal)
+
+wget 또는 curl 로 설치
 ### wget
 ```
 sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
