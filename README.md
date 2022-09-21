@@ -1,5 +1,8 @@
 # TLJH-DW
-## Test TLJH-DW
+# Test TLJH-DW (Bare metal)
+
+
+# Test TLJH-DW (Docker)
 
 ## Install Docker
 ### wget
