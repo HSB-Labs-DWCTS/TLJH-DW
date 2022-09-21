@@ -1,6 +1,12 @@
 # tmp
+## Test TLJH-DW
 
-test TLJH-dw is with Docker
+## Install Docker
+```
+sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
+```
+
+## Test TLJH-dw is with Docker
 ```
 docker run \
   --privileged \
