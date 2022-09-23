@@ -13,8 +13,9 @@ do_install() {
   
   # Change default User Interface for users
   sudo tljh-config set user_environment.default_app jupyterlab  
+  
   # Enable PAM Authenticator
-  sudo tljh-config set auth.type jupyterhub.auth.PAMAuthenticator
+  # sudo tljh-config set auth.type jupyterhub.auth.PAMAuthenticator
   sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
@@ -22,7 +23,7 @@ do_install() {
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR jupyterlab-git jupyterlab_execute_time -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time -y
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp -y
