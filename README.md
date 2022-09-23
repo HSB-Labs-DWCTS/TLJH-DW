@@ -9,7 +9,7 @@ sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.
 
 ### curl
 ```
-sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
+sudo curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/01.jupyterhub_install.sh | sh
 ```
 
 ## TLJH-DW Login
