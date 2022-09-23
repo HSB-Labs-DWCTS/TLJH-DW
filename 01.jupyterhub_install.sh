@@ -12,8 +12,10 @@ do_install() {
   curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/bootstrap.py | sudo -E python3 - --admin admin
   
   # Change default User Interface for users
-  sudo tljh-config set user_environment.default_app jupyterlab
-  sudo tljh-config reload hub
+  sudo tljh-config set user_environment.default_app jupyterlab  
+  # Enable PAM Authenticator
+  sudo tljh-config set auth.type jupyterhub.auth.PAMAuthenticator
+  sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR jupyterlab-git jupyterlab_execute_time -y
