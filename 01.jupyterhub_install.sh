@@ -19,9 +19,9 @@ do_install() {
   # extension
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR -y
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab jupyterlab-git -y    
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y  
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y  
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab jupyterlab-git -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y
+  # sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp -y
 
 }
