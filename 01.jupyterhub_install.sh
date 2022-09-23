@@ -23,7 +23,7 @@ do_install() {
   
   # Extension
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR jupyterlab-git jupyterlab_execute_time -y
-  sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard -y
+  sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp -y
   
