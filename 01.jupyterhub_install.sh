@@ -19,7 +19,7 @@ do_install() {
   sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR jupyterlab-git jupyterlab_execute_time -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-language-pack-ko-KR -y
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
