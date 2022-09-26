@@ -26,8 +26,6 @@ do_install() {
   # jupyterlab-git, jupyterlab_nvdashboard, jupyterlab_execute_time, jupyterlab-drawio
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time jupyterlab-drawio -y
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
-  # sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y
-  # sudo -E /opt/tljh/user/bin/conda install -c conda-forge 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp -y
   
   # Config
   # echo 'export PATH=$PATH:/opt/tljh/user/bin' >> ~/.bashrc
