@@ -23,6 +23,7 @@ do_install() {
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
+  # jupyterlab-git, jupyterlab_nvdashboard, jupyterlab_execute_time, jupyterlab-drawio
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time jupyterlab-drawio -y
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   # sudo -E /opt/tljh/user/bin/conda install -c conda-forge python-lsp-server -y
