@@ -9,7 +9,7 @@ set -e
 do_install() {
   sudo apt update && sudo apt upgrade -y
   sudo apt install python3 python3-dev git curl -y
-  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/TLJH-DW/main/bootstrap.py | sudo -E python3 - --admin admin
+  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
   
   # Change default User Interface for users
   sudo tljh-config set user_environment.default_app jupyterlab  
