@@ -1,5 +1,5 @@
 # the-littlest-jupyterhub-dwcts
-# Test the-littlest-jupyterhub-dwcts (Bare metal)
+# Test tljh-dwcts (Bare metal)
 
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
@@ -13,14 +13,14 @@ sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jup
 sudo curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/01.jupyterhub_install.sh | sh
 ```
 
-## the-littlest-jupyterhub-dwcts Login
+## tljh-dwcts Login
 Login admin
  - admin:admin123
 ```
 http://{Server IP}
 ```
 
-# Test the-littlest-jupyterhub-dwcts (Docker)
+# Test tljh-dwcts (Docker)
 
 ## Install Docker
 
@@ -41,7 +41,7 @@ sudo usermod -a -G docker $USER
 sudo usermod -a -G docker $(whoami)
 ```
 
-## Test the-littlest-jupyterhub-dwcts is with Docker
+## Test tljh-dwcts is with Docker
 ```
 docker run \
   --privileged \
@@ -57,7 +57,7 @@ docker run \
 docker exec -it tljh-dw /bin/bash
 ```
 
-## the-littlest-jupyterhub-dwcts Login
+## tljh-dwcts Login
 Login admin
  - admin:admin123
 ```
