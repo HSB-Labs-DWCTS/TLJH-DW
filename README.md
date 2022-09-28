@@ -13,7 +13,7 @@ sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jup
 sudo curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/01.jupyterhub_install.sh | sh
 ```
 
-## tljh-dwcts Login
+## Login
 Login admin
  - admin:admin123
 ```
@@ -57,7 +57,7 @@ docker run \
 docker exec -it tljh-dw /bin/bash
 ```
 
-## tljh-dwcts Login
+## Login
 Login admin
  - admin:admin123
 ```
