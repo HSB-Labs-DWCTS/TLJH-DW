@@ -27,12 +27,12 @@ http://{Server IP}
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
 ```
-sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
+sudo wget -qO- https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/01.docker_install.sh | sh
 ```
 
 ### curl
 ```
-sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/tmp/main/01.docker_install.sh | sh
+sudo curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/01.docker_install.sh | sh
 ```
 
 ## Add Docker group
