@@ -1,5 +1,5 @@
 # the-littlest-jupyterhub-dwcts
-# Test tljh-dwcts (Bare metal)
+# Bare metal
 
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
@@ -20,7 +20,7 @@ Login admin
 http://{Server IP}
 ```
 
-# Test tljh-dwcts (Docker)
+# Docker
 
 ## Install Docker
 
