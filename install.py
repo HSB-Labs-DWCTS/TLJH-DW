@@ -44,6 +44,8 @@ def add_path():
 
 def main():
     update()
+    uninstall_nvidia()
+    uninstall_cuda()
     install()
     install_bootstrap()
     change_default_user_interface()
