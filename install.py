@@ -12,6 +12,18 @@ def update():
     os.system('sudo apt update')
     os.system('sudo apt upgrade -y')
 
+def uninstall_nvidia():
+    print('Nvidia Uninstall')
+    os.system('sudo apt purge nvidia* -y')
+    os.system('sudo apt autoremove -y')
+    os.system('sudo apt autoclean -y')
+
+def uninstall_cuda():
+    print('Uninstall CUDA')
+    os.system('sudo rm -fr /usr/local/cuda*')
+    os.system('sudo apt --purge remove "cuda*"')
+    os.system('sudo apt autoremove --purge "cuda*"')
+
 def install():
     print('Install Packages')
     os.system('sudo apt install python3 python3-dev git curl -y')
@@ -37,11 +49,11 @@ def install_extensions():
     os.system('sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time -y')
     os.system('sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard')
 
-def add_path():
-    print('Add PATH')
-    os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
-    os.system('source ~/.bashrc')
-
+# def add_path():
+#     print('Add PATH')
+#     os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
+#     os.system('source ~/.bashrc')
+    
 def main():
     update()
     uninstall_nvidia()
@@ -52,7 +64,8 @@ def main():
     tljs_reload()
     install_jupyterlab_language_pack()
     install_extensions()
-    add_path()
+    # add_path()
 
 if __name__ == '__main__':
     main()
+
