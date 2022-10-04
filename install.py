@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# OS Ubuntu 20.04
+# Python 3.8.10
+
 import os
 import sys
 import subprocess
