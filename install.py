@@ -93,4 +93,6 @@ def main():
         e_save_log = open('install.log', 'w')
         e_save_log.write(e)
         e_save_log.close()
-        sys.exit(1)
+
+if __name__ == '__main__':
+    main()
