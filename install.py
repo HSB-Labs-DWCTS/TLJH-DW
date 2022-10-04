@@ -1,6 +1,3 @@
-# OS Ubuntu 20.04
-# Python 3.8.10
-
 #!/usr/bin/python3
 
 import os
