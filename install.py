@@ -39,6 +39,7 @@ def install_extensions():
 def add_path():
     print('Add PATH')
     os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
+    os.system('source ~/.bashrc')
 
 def main():
     update()
