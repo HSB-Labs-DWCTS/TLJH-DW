@@ -38,9 +38,12 @@ def install_extensions():
     os.system('sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard')
 
 def add_path():
-    print('Add path')
-    os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
-    subprocess.run("sudo bash -c 'source ~/.bashrc'", shell=True)
+    print('Add path')    
+    sys.path.append("/opt/tljh/user/bin")
+    print(sys.path)    
+    with open('~/.bashrc', 'a') as f:
+        f.write('export PATH=$PATH:/opt/tljh/user/bin')
+    subprocess.run("bash -c 'source ~/.bashrc'", shell=True)
 
 def main():
     update()
@@ -54,4 +57,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
