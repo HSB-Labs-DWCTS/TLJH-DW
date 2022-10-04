@@ -75,6 +75,7 @@ def add_path():
     subprocess.run("sudo bash -c 'source ~/.bashrc'", shell=True)
 
 def main():
+    find_vga()
     update()
     check_nvidia()
     uninstall_nvidia()
