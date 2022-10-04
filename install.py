@@ -10,9 +10,6 @@ import subprocess
 def find_vga():
     print('Find VGA')
     vga = subprocess.Popen("lspci -v -s `lspci | awk '/VGA/{print $1}'`", shell=True)
-    savelog = open('install.log', 'w')
-    savelog.write(vga)
-    savelog.close()
     return vga
 
 def update():
@@ -78,21 +75,17 @@ def add_path():
     subprocess.run("sudo bash -c 'source ~/.bashrc'", shell=True)
 
 def main():
-    try:
-        update()
-        check_nvidia()
-        install()
-        install_bootstrap()
-        change_default_user_interface()
-        tljs_reload()
-        install_jupyterlab_language_pack()
-        install_extensions()
-        add_path()
-    except Exception as e:
-        print(e)
-        e_save_log = open('install.log', 'w')
-        e_save_log.write(e)
-        e_save_log.close()
+    update()
+    check_nvidia()
+    uninstall_nvidia()
+    uninstall_nvidia_cuda()
+    install()
+    install_bootstrap()
+    change_default_user_interface()
+    tljs_reload()
+    install_jupyterlab_language_pack()
+    install_extensions()
+    add_path()
 
 if __name__ == '__main__':
     main()
