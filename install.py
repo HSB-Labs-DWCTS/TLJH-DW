@@ -18,7 +18,7 @@ def update():
     os.system('sudo apt upgrade -y')
     
 def check_nvidia():
-    if find_vga in 'NVIDIA':
+    if 'NVIDIA' in find_vga:
         uninstall_nvidia()
         uninstall_nvidia_cuda()
     else:
@@ -76,7 +76,7 @@ def add_path():
 
 def main():
     update()
-    # check_nvidia()
+    check_nvidia()
     uninstall_nvidia()
     uninstall_nvidia_cuda()
     install()
