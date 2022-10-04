@@ -1,3 +1,8 @@
+# OS Ubuntu 20.04
+# Python 3.8.10
+
+#!/usr/bin/python3
+
 import os
 import sys
 import subprocess
@@ -9,7 +14,8 @@ def update():
 
 def install():
     print('Install Packages')
-    os.system('sudo apt install -y python3-pip python3-venv python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev libjpeg-dev')
+    # python3 python3-dev git curl
+    os.system('sudo apt install python3 python3-dev git curl -y')
 
 def install_bootstrap():
     print('Install Bootstrap')
@@ -33,8 +39,7 @@ def install_extensions():
 
 def add_path():
     print('Add PATH')
-    os.system('export PATH=$PATH:/opt/tljh/user/bin')
-    os.system('source ~/.bashrc')
+    os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
 
 def main():
     update()
