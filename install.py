@@ -7,35 +7,10 @@ import os
 import sys
 import subprocess
 
-def find_vga():
-    print('Find VGA')
-    vga = subprocess.Popen("lspci -v -s `lspci | awk '/VGA/{print $1}'`", shell=True)
-    return vga
-
 def update():
     print('Update and Upgrade')
     os.system('sudo apt update')
     os.system('sudo apt upgrade -y')
-    
-def uninstall_nvidia():
-    print('NVIDIA Uninstall')
-    if 'NVIDIA' in find_vga() or os.path.exists('/usr/bin/nvidia-smi'):
-        print('Nvidia Driver is installed')
-        os.system('sudo apt purge nvidia* -y')
-        os.system('sudo apt autoremove -y')
-        os.system('sudo apt autoclean -y')
-    else:
-        print('Nvidia Driver is not installed')
-
-def uninstall_nvidia_cuda():    
-    print('Uninstall CUDA')
-    if 'NVIDIA' in find_vga() or os.path.exists('/usr/local/cuda'):
-        print('CUDA is installed')
-        os.system('sudo rm -fr /usr/local/cuda*')
-        os.system('sudo apt --purge remove "cuda*"')
-        os.system('sudo apt autoremove --purge "cuda*"')
-    else:
-        print('CUDA is not installed')
 
 def install():
     print('Install Packages')
@@ -68,10 +43,7 @@ def add_path():
     subprocess.run("sudo bash -c 'source ~/.bashrc'", shell=True)
 
 def main():
-    find_vga()
     update()
-    uninstall_nvidia()
-    uninstall_nvidia_cuda()
     install()
     install_bootstrap()
     change_default_user_interface()
@@ -82,3 +54,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
