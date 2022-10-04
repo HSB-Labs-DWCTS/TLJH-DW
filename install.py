@@ -24,7 +24,7 @@ def change_default_user_interface():
     print('Change default User Interface for users')
     os.system('sudo tljh-config set user_environment.default_app jupyterlab')
 
-def reload():
+def tljs_reload():
     print('Reload')
     os.system('sudo tljh-config reload')
 
@@ -49,7 +49,7 @@ def main():
     install()
     install_bootstrap()
     change_default_user_interface()
-    reload()
+    tljs_reload()
     install_jupyterlab_language_pack()
     install_extensions()
     add_path()
