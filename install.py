@@ -7,22 +7,45 @@ import os
 import sys
 import subprocess
 
+def find_vga():
+    print('Find VGA')
+    vga = subprocess.Popen("lspci -v -s `lspci | awk '/VGA/{print $1}'`", shell=True)
+    savelog = open('install.log', 'w')
+    savelog.write(vga)
+    savelog.close()
+    return vga
+
 def update():
     print('Update and Upgrade')
     os.system('sudo apt update')
     os.system('sudo apt upgrade -y')
+    
+def check_nvidia():
+    if find_vga in NVIDIA:
+        uninstall_nvidia()
+        uninstall_nvidia_cuda()
+    else:
+        print('Nvidia is not installed')
 
 def uninstall_nvidia():
-    print('Nvidia Uninstall')
-    os.system('sudo apt purge nvidia* -y')
-    os.system('sudo apt autoremove -y')
-    os.system('sudo apt autoclean -y')
+    print('NVIDIA Uninstall')
+    if os.path.exists('/usr/bin/nvidia-smi'):
+        print('Nvidia Driver is installed')
+        os.system('sudo apt purge nvidia* -y')
+        os.system('sudo apt autoremove -y')
+        os.system('sudo apt autoclean -y')
+    else:
+        print('Nvidia Driver is not installed')
 
-def uninstall_cuda():
+def uninstall_nvidia_cuda():    
     print('Uninstall CUDA')
-    os.system('sudo rm -fr /usr/local/cuda*')
-    os.system('sudo apt --purge remove "cuda*"')
-    os.system('sudo apt autoremove --purge "cuda*"')
+    if os.path.exists('/usr/local/cuda'):
+        print('CUDA is installed')
+        os.system('sudo rm -fr /usr/local/cuda*')
+        os.system('sudo apt --purge remove "cuda*"')
+        os.system('sudo apt autoremove --purge "cuda*"')
+    else:
+        print('CUDA is not installed')
 
 def install():
     print('Install Packages')
@@ -49,23 +72,21 @@ def install_extensions():
     os.system('sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time -y')
     os.system('sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard')
 
-# def add_path():
-#     print('Add PATH')
-#     os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
-#     os.system('source ~/.bashrc')
+def add_path():
+    print('Add path')
+    os.environ['PATH'] = os.environ['PATH'] + ':/opt/tljh/user/bin'
+    subprocess.run("sudo bash -c 'source ~/.bashrc'", shell=True)
     
 def main():
     update()
-    uninstall_nvidia()
-    uninstall_cuda()
+    check_nvidia()
     install()
     install_bootstrap()
     change_default_user_interface()
     tljs_reload()
     install_jupyterlab_language_pack()
     install_extensions()
-    # add_path()
+    add_path()
 
 if __name__ == '__main__':
     main()
-
