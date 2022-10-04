@@ -76,7 +76,7 @@ def add_path():
 
 def main():
     update()
-    check_nvidia()
+    # check_nvidia()
     uninstall_nvidia()
     uninstall_nvidia_cuda()
     install()
