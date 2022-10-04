@@ -17,16 +17,9 @@ def update():
     os.system('sudo apt update')
     os.system('sudo apt upgrade -y')
     
-def check_nvidia():
-    if 'NVIDIA' in find_vga:
-        uninstall_nvidia()
-        uninstall_nvidia_cuda()
-    else:
-        print('Nvidia is not installed')
-
 def uninstall_nvidia():
     print('NVIDIA Uninstall')
-    if os.path.exists('/usr/bin/nvidia-smi'):
+    if 'NVIDIA' in find_vga() or os.path.exists('/usr/bin/nvidia-smi'):
         print('Nvidia Driver is installed')
         os.system('sudo apt purge nvidia* -y')
         os.system('sudo apt autoremove -y')
@@ -36,7 +29,7 @@ def uninstall_nvidia():
 
 def uninstall_nvidia_cuda():    
     print('Uninstall CUDA')
-    if os.path.exists('/usr/local/cuda'):
+    if 'NVIDIA' in find_vga() or os.path.exists('/usr/local/cuda'):
         print('CUDA is installed')
         os.system('sudo rm -fr /usr/local/cuda*')
         os.system('sudo apt --purge remove "cuda*"')
@@ -77,7 +70,6 @@ def add_path():
 def main():
     find_vga()
     update()
-    check_nvidia()
     uninstall_nvidia()
     uninstall_nvidia_cuda()
     install()
