@@ -34,7 +34,8 @@ def install_jupyterlab_language_pack():
 
 def install_extensions():
     print('Install Extensions')
-    os.system('sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time jupyterlab_nvdashboard -y')
+    os.system('sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time -y')
+    os.system('sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard')
 
 def add_path():
     print('Add PATH')
