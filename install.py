@@ -14,7 +14,6 @@ def update():
 
 def install():
     print('Install Packages')
-    # python3 python3-dev git curl
     os.system('sudo apt install python3 python3-dev git curl -y')
 
 def install_bootstrap():
