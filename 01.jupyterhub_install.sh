@@ -24,7 +24,8 @@ do_install() {
   
   # Extension
   # jupyterlab-git, jupyterlab_nvdashboard, jupyterlab_execute_time, lckr-jupyterlab-variableinspector
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git jupyterlab_execute_time -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   sudo -E /opt/tljh/user/bin/pip install lckr-jupyterlab-variableinspector
   
