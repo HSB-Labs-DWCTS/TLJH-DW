@@ -426,8 +426,6 @@ def main():
         )
         run_subprocess(["add-apt-repository", "universe", "--yes"])
         run_subprocess(["apt-get", "update"])
-        # Upgrade
-        run_subprocess(["apt-get", "update", "--yes"])
         run_subprocess(
             [
                 "apt-get",
@@ -437,12 +435,9 @@ def main():
                 "python3-venv",
                 "python3-pip",
                 "git",
-                "curl",
             ],
             env=apt_get_adjusted_env,
         )
-
-
 
         logger.info("Setting up virtual environment at {}".format(hub_prefix))
         os.makedirs(hub_prefix, exist_ok=True)
@@ -479,74 +474,9 @@ def main():
     logger.info("Running TLJH installer...")
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
+    
+run_subprocess(["tljh-config", "set", "user_environment.default_app", "jupyterlab"], env=apt_get_adjusted_env,)
 
-if not initial_setup:
-    logger.info("Existing TLJH installation detected, upgrading...")
-else:
-    logger.info("Existing TLJH installation not detected, installing...")
-    logger.info("Setting up hub environment...")
-    logger.info("Installing Python, venv, pip, and git via apt-get...")
-    apt_get_adjusted_env = os.environ.copy()
-    apt_get_adjusted_env["DEBIAN_FRONTEND"] = "noninteractive"         
-
-    run_subprocess(
-        [
-            "tljh-config", 
-            "set", 
-            "user_environment.default_app", 
-            "jupyterlab"
-        ], 
-        env=apt_get_adjusted_env,
-    )
-    run_subprocess(
-        [
-            "tljh-config", 
-            "reload",
-        ],
-        env=apt_get_adjusted_env,
-    )
-
-    # Jupyterlab ko-KR language pack
-    run_subprocess(
-        [
-            "/opt/tljh/user/bin/conda", 
-            "install", 
-            "-c", 
-            "conda-forge", 
-            "jupyterlab-language-pack-ko-KR", 
-            "-y",
-        ],
-        env=apt_get_adjusted_env,
-    )
-
-    # Jupyterlab extensions
-    run_subprocess(
-        [
-            "/opt/tljh/user/bin/conda", 
-            "install", 
-            "-c", 
-            "conda-forge", 
-            "jupyterlab-git", 
-            "jupyterlab-drawio", 
-            "ipysheet", 
-            "theme-darcula", 
-            "-y",
-        ],
-        env=apt_get_adjusted_env,
-    )
-
-    # Jupyterlab extensions
-    run_subprocess(
-        [
-            "/opt/tljh/user/bin/pip", 
-            "install", 
-            "jupyterlab_nvdashboard", 
-            "lckr-jupyterlab-variableinspector", 
-            "jupyterlab-github", 
-            "jupyterlab_materialdarker", 
-        ],
-        env=apt_get_adjusted_env,
-    )
 
 if __name__ == "__main__":
     main()
