@@ -476,7 +476,6 @@ def main():
              "tljh.installer"] + tljh_installer_flags)
 
 apt_get_adjusted_env = os.environ.copy()
-apt_get_adjusted_env["DEBIAN_FRONTEND"] = "noninteractive"    
 run_subprocess(["tljh-config", "set", "user_environment.default_app", "jupyterlab"], env=apt_get_adjusted_env,)
 
 
