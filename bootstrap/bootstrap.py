@@ -324,6 +324,9 @@ def _resolve_git_version(version):
     return ".".join(str(f) for f in found)
 
 
+def installExtension():
+    subprocess(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+
 def main():
     """
     This bootstrap script intercepts some command line flags, everything else is
@@ -475,8 +478,7 @@ def main():
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
 
-subprocess(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"], stdout=PIPE, stderr=PIPE, universal_newlines=True)
-
+installExtension()
 
 if __name__ == "__main__":
     main()
