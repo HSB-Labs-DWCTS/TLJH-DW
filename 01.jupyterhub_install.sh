@@ -31,6 +31,7 @@ do_install() {
   sudo -E /opt/tljh/user/bin/pip install jupyterlab-github
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-drawio
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge ipysheet
+  sudo -E /opt/tljh/user/bin/pip install pip install jupyterlab_materialdarker
   
   # Extension list
   sudo /opt/tljh/user/bin/jupyter server extension list
