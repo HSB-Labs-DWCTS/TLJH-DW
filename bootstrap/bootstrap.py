@@ -444,8 +444,11 @@ def main():
 
         run_subprocess(
             [
-                "tljh-config", "set", "user_environment.default_app", "jupyterlab",
-                ], 
+                "tljh-config", 
+                "set", 
+                "user_environment.default_app", 
+                "jupyterlab",
+            ], 
             env=apt_get_adjusted_env,
         )
         run_subprocess(
@@ -532,8 +535,6 @@ def main():
     logger.info("Running TLJH installer...")
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
-
-
 
 if __name__ == "__main__":
     main()
