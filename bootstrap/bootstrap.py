@@ -436,7 +436,7 @@ def main():
                 "python3",
                 "python3-venv",
                 "python3-pip",
-                "git"
+                "git",
                 "curl",
             ],
             env=apt_get_adjusted_env,
