@@ -442,6 +442,49 @@ def main():
             env=apt_get_adjusted_env,
         )
 
+        run_subprocess(
+            ["tljh-config", "set", "user_environment.default_app", "jupyterlab"], 
+        )
+        run_subprocess(["tljh-config", "reload"])
+
+        # Jupyterlab ko-KR language pack
+        run_subprocess(
+            [
+                "/opt/tljh/user/bin/conda", 
+                "install", 
+                "-c", 
+                "conda-forge", 
+                "jupyterlab-language-pack-ko-KR", 
+                "-y"
+            ]
+        )
+
+        # Jupyterlab extensions
+        run_subprocess(
+            [
+                "/opt/tljh/user/bin/conda", 
+                "install", 
+                "-c", 
+                "conda-forge", 
+                "jupyterlab-git", 
+                "jupyterlab-drawio", 
+                "ipysheet", 
+                "theme-darcula", 
+                "-y"
+            ]
+        )
+
+        # Jupyterlab extensions
+        run_subprocess(
+            [
+                "/opt/tljh/user/bin/pip", 
+                "install", 
+                "jupyterlab_nvdashboard", 
+                "lckr-jupyterlab-variableinspector", 
+                "jupyterlab-github", 
+                "jupyterlab_materialdarker", 
+            ]
+        )
         logger.info("Setting up virtual environment at {}".format(hub_prefix))
         os.makedirs(hub_prefix, exist_ok=True)
         run_subprocess(["python3", "-m", "venv", hub_prefix])
@@ -478,49 +521,7 @@ def main():
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
 
-run_subprocess(
-    ["tljh-config", "set", "user_environment.default_app", "jupyterlab"], 
-)
-run_subprocess(["tljh-config", "reload"])
 
-# Jupyterlab ko-KR language pack
-run_subprocess(
-    [
-        "/opt/tljh/user/bin/conda", 
-        "install", 
-        "-c", 
-        "conda-forge", 
-        "jupyterlab-language-pack-ko-KR", 
-        "-y"
-    ]
-)
-
-# Jupyterlab extensions
-run_subprocess(
-    [
-        "/opt/tljh/user/bin/conda", 
-        "install", 
-        "-c", 
-        "conda-forge", 
-        "jupyterlab-git", 
-        "jupyterlab-drawio", 
-        "ipysheet", 
-        "theme-darcula", 
-        "-y"
-    ]
-)
-
-# Jupyterlab extensions
-run_subprocess(
-    [
-        "/opt/tljh/user/bin/pip", 
-        "install", 
-        "jupyterlab_nvdashboard", 
-        "lckr-jupyterlab-variableinspector", 
-        "jupyterlab-github", 
-        "jupyterlab_materialdarker", 
-    ]
-)
 
 if __name__ == "__main__":
     main()
