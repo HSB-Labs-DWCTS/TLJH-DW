@@ -443,9 +443,18 @@ def main():
         )
 
         run_subprocess(
-            ["tljh-config", "set", "user_environment.default_app", "jupyterlab"], 
+            [
+                "tljh-config", "set", "user_environment.default_app", "jupyterlab",
+                ], 
+            env=apt_get_adjusted_env,
         )
-        run_subprocess(["tljh-config", "reload"])
+        run_subprocess(
+            [
+                "tljh-config", 
+                "reload",
+            ],
+                env=apt_get_adjusted_env,
+        )
 
         # Jupyterlab ko-KR language pack
         run_subprocess(
