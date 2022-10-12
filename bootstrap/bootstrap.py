@@ -455,8 +455,9 @@ def main():
                 "-c", 
                 "conda-forge", 
                 "jupyterlab-language-pack-ko-KR", 
-                "-y"
-            ]
+                "-y",
+            ],
+            env=apt_get_adjusted_env,
         )
 
         # Jupyterlab extensions
@@ -470,8 +471,9 @@ def main():
                 "jupyterlab-drawio", 
                 "ipysheet", 
                 "theme-darcula", 
-                "-y"
-            ]
+                "-y",
+            ],
+            env=apt_get_adjusted_env,
         )
 
         # Jupyterlab extensions
@@ -483,7 +485,8 @@ def main():
                 "lckr-jupyterlab-variableinspector", 
                 "jupyterlab-github", 
                 "jupyterlab_materialdarker", 
-            ]
+            ],
+            env=apt_get_adjusted_env,
         )
         logger.info("Setting up virtual environment at {}".format(hub_prefix))
         os.makedirs(hub_prefix, exist_ok=True)
