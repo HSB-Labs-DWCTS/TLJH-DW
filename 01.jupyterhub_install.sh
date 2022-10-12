@@ -31,6 +31,9 @@ do_install() {
   sudo -E /opt/tljh/user/bin/pip install jupyterlab-github
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-drawio
   
+  # Extension list
+  sudo /opt/tljh/user/bin/jupyter server extension list
+  
   # Config
   # echo 'export PATH=$PATH:/opt/tljh/user/bin' >> ~/.bashrc
   # source ~/.bashrc
