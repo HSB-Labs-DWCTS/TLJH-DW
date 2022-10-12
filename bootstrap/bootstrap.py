@@ -325,7 +325,7 @@ def _resolve_git_version(version):
 
 
 def installExtension():
-    subprocess.run(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"], stdout=subprocess.PIPE, shell=True, check=True)
+    subprocess.run(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"], stdout=subprocess.PIPE shell=True, check=True)
 
 def main():
     """
@@ -467,6 +467,8 @@ def main():
             ),
         )
     )
+    installExtension()
+
     if initial_setup:
         logger.info("Installing TLJH installer...")
     else:
@@ -478,7 +480,6 @@ def main():
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
 
-installExtension()
 
 if __name__ == "__main__":
     main()
