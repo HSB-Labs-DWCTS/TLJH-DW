@@ -24,14 +24,18 @@ do_install() {
   
   # Extension
   # jupyterlab-git, jupyterlab-github, jupyterlab_nvdashboard, jupyterlab_execute_time, lckr-jupyterlab-variableinspector, jupyterlab-drawio,ipysheet
+  # conda-forge
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git -y
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-drawio -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge ipysheet -y
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge theme-darcula -y
+  
+  # pip
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   sudo -E /opt/tljh/user/bin/pip install lckr-jupyterlab-variableinspector
   sudo -E /opt/tljh/user/bin/pip install jupyterlab-github
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-drawio
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge ipysheet
-  sudo -E /opt/tljh/user/bin/pip install pip install jupyterlab_materialdarker
+  sudo -E /opt/tljh/user/bin/pip install jupyterlab_materialdarker
   
   # Extension list
   sudo /opt/tljh/user/bin/jupyter server extension list
