@@ -23,11 +23,12 @@ do_install() {
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
-  # jupyterlab-git, jupyterlab_nvdashboard, jupyterlab_execute_time, lckr-jupyterlab-variableinspector
+  # jupyterlab-git, jupyterlab_nvdashboard, jupyterlab_execute_time, lckr-jupyterlab-variableinspector, jupyterlab-drawio
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-git -y
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab_execute_time -y
   sudo -E /opt/tljh/user/bin/pip install jupyterlab_nvdashboard
   sudo -E /opt/tljh/user/bin/pip install lckr-jupyterlab-variableinspector
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge jupyterlab-drawio
   
   # Config
   # echo 'export PATH=$PATH:/opt/tljh/user/bin' >> ~/.bashrc
