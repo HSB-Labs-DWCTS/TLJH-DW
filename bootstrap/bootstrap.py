@@ -325,7 +325,7 @@ def _resolve_git_version(version):
 
 
 def installExtension():
-    subprocess.run(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"], check=True)
+    subprocess.run(["sudo", "tljh-config", "set", "user_environment.default_app", "jupyterlab"])
 
 def main():
     """
