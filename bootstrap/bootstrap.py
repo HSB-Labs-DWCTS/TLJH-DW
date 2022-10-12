@@ -480,7 +480,6 @@ def main():
 
 run_subprocess(
     ["tljh-config", "set", "user_environment.default_app", "jupyterlab"], 
-    env=apt_get_adjusted_env,
 )
 run_subprocess(["tljh-config", "reload"])
 
