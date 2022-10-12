@@ -442,64 +442,8 @@ def main():
             env=apt_get_adjusted_env,
         )
 
-        run_subprocess(
-            [
-                "tljh-config", 
-                "set", 
-                "user_environment.default_app", 
-                "jupyterlab",
-            ], 
-            env=apt_get_adjusted_env,
-        )
-        run_subprocess(
-            [
-                "tljh-config", 
-                "reload",
-            ],
-                env=apt_get_adjusted_env,
-        )
 
-        # Jupyterlab ko-KR language pack
-        run_subprocess(
-            [
-                "/opt/tljh/user/bin/conda", 
-                "install", 
-                "-c", 
-                "conda-forge", 
-                "jupyterlab-language-pack-ko-KR", 
-                "-y",
-            ],
-            env=apt_get_adjusted_env,
-        )
 
-        # Jupyterlab extensions
-        run_subprocess(
-            [
-                "/opt/tljh/user/bin/conda", 
-                "install", 
-                "-c", 
-                "conda-forge", 
-                "jupyterlab-git", 
-                "jupyterlab-drawio", 
-                "ipysheet", 
-                "theme-darcula", 
-                "-y",
-            ],
-            env=apt_get_adjusted_env,
-        )
-
-        # Jupyterlab extensions
-        run_subprocess(
-            [
-                "/opt/tljh/user/bin/pip", 
-                "install", 
-                "jupyterlab_nvdashboard", 
-                "lckr-jupyterlab-variableinspector", 
-                "jupyterlab-github", 
-                "jupyterlab_materialdarker", 
-            ],
-            env=apt_get_adjusted_env,
-        )
         logger.info("Setting up virtual environment at {}".format(hub_prefix))
         os.makedirs(hub_prefix, exist_ok=True)
         run_subprocess(["python3", "-m", "venv", hub_prefix])
@@ -535,6 +479,84 @@ def main():
     logger.info("Running TLJH installer...")
     os.execv(python_bin, [python_bin, "-m",
              "tljh.installer"] + tljh_installer_flags)
+    
+if not initial_setup:
+    logger.info("Existing TLJH installation detected, upgrading...")
+else:
+    logger.info("Existing TLJH installation not detected, installing...")
+    logger.info("Setting up hub environment...")
+    logger.info("Installing Python, venv, pip, and git via apt-get...")
+
+    # In some very minimal base VM images, it looks like the "universe" apt
+    # package repository is disabled by default, causing bootstrapping to
+    # fail. We install the software-properties-common package so we can get
+    # the add-apt-repository command to make sure the universe repository is
+    # enabled, since that's where the python3-pip package lives.
+    #
+    # In Ubuntu 21.10 DEBIAN_FRONTEND has found to be needed to avoid
+    # getting stuck on an input prompt during apt-get install.
+    #
+    apt_get_adjusted_env = os.environ.copy()
+    apt_get_adjusted_env["DEBIAN_FRONTEND"] = "noninteractive"         
+    
+    run_subprocess(
+        [
+            "tljh-config", 
+            "set", 
+            "user_environment.default_app", 
+            "jupyterlab"
+        ], 
+        env=apt_get_adjusted_env,
+    )
+    run_subprocess(
+        [
+            "tljh-config", 
+            "reload",
+        ],
+        env=apt_get_adjusted_env,
+    )
+
+    # Jupyterlab ko-KR language pack
+    run_subprocess(
+        [
+            "/opt/tljh/user/bin/conda", 
+            "install", 
+            "-c", 
+            "conda-forge", 
+            "jupyterlab-language-pack-ko-KR", 
+            "-y",
+        ],
+        env=apt_get_adjusted_env,
+    )
+
+    # Jupyterlab extensions
+    run_subprocess(
+        [
+            "/opt/tljh/user/bin/conda", 
+            "install", 
+            "-c", 
+            "conda-forge", 
+            "jupyterlab-git", 
+            "jupyterlab-drawio", 
+            "ipysheet", 
+            "theme-darcula", 
+            "-y",
+        ],
+        env=apt_get_adjusted_env,
+    )
+
+    # Jupyterlab extensions
+    run_subprocess(
+        [
+            "/opt/tljh/user/bin/pip", 
+            "install", 
+            "jupyterlab_nvdashboard", 
+            "lckr-jupyterlab-variableinspector", 
+            "jupyterlab-github", 
+            "jupyterlab_materialdarker", 
+        ],
+        env=apt_get_adjusted_env,
+    )
 
 if __name__ == "__main__":
     main()
