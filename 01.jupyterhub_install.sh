@@ -10,8 +10,9 @@ doInstall() {
   sudo apt update
   # sudo apt upgrade --yes
   sudo apt install python3 python3-dev git curl --yes
-  #curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
-  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin:admin123
+  # curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
+  # curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin:admin123
+  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin:admin123 --user-requirements-txt-url https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/extensionList.txt
   
   # Settings
   # Change default User Interface for users
@@ -22,13 +23,13 @@ doInstall() {
   sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-language-pack-ko-KR
+  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-language-pack-ko-KR
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
   # conda-forge
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio nbconvert
-  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard
+  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio nbconvert
+  #sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
