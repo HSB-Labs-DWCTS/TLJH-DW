@@ -27,8 +27,8 @@ doInstall() {
   # Extension
   # jupyterlab-git, jupyterlab-github, jupyterlab_nvdashboard, jupyterlab_execute_time, lckr-jupyterlab-variableinspector, jupyterlab-drawio,ipysheet
   # conda-forge
-  # sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-nvdashboard jupyterlab-variableinspector jupyterlab-drawio
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-nvdashboard
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-nvdashboard jupyterlab-variableinspector jupyterlab-drawio
+  # sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-nvdashboard
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
