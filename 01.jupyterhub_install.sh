@@ -10,7 +10,8 @@ doInstall() {
   sudo apt update
   # sudo apt upgrade --yes
   sudo apt install python3 python3-dev git curl --yes
-  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
+  #curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
+  curl -sL https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin:admin123
   
   # Settings
   # Change default User Interface for users
