@@ -1,0 +1,7 @@
+jupyterlab-language-pack-ko-KR
+jupyterlab-git jupyterlab-github
+jupyterlab_execute_time
+jupyterlab-variableinspector
+jupyterlab-drawio
+nbconvert
+jupyterlab-nvdashboard
