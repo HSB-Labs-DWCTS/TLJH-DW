@@ -3,7 +3,7 @@
 # Bare metal
 
 ## Prerequisites
-###
+### install build tools
 ```
 sudo apt-get install -y install build-essential
 ```
