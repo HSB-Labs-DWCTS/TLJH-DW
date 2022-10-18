@@ -8,6 +8,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
+
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
 ```
