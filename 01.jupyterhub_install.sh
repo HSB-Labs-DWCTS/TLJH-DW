@@ -24,13 +24,13 @@ doInstall() {
   sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
-  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-language-pack-ko-KR
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-language-pack-ko-KR
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
   # conda-forge
-  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio ipywidgets
-  #sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio ipywidgets
+  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
