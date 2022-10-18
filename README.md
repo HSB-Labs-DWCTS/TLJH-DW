@@ -1,12 +1,12 @@
 # the-littlest-jupyterhub-dwcts
 
-# Node.js
+# Bare metal
+
+### Node.js
 ```
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
-
-# Bare metal
 
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
