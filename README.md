@@ -3,6 +3,10 @@
 # Bare metal
 
 ## Prerequisites
+###
+```
+sudo apt-get install --yes install build tools
+```
 ### Node.js
 ```
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
@@ -24,7 +28,7 @@ sudo curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyt
 
 ## Login
 Login admin
- - admin:admin123
+ - admin:password
 ```
 http://{Server IP}
 ```
