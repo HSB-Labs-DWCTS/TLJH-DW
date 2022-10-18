@@ -5,6 +5,7 @@
 ## Prerequisites
 ###
 ```
+sudo apt-get update
 sudo apt-get install --yes install build tools
 ```
 ### Node.js
