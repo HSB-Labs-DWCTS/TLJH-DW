@@ -13,7 +13,11 @@ doInstall() {
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
   sudo apt install -y python3 python3-dev git curl
   # curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
-  curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin admin
+  # curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin admin
+  curl -L https://tljh.jupyter.org/bootstrap.py \
+  | sudo -E python3 - \
+  --admin admin \
+  --plugin jupyterlab-language-pack-ko-KR
   
   # Settings
   # Change default User Interface for users
@@ -24,13 +28,13 @@ doInstall() {
   sudo tljh-config reload
   
   # JupyterLab ko-KR Language Pack
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-language-pack-ko-KR
+  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-language-pack-ko-KR
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
   # Extension
   # conda-forge
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio ipywidgets
-  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
+  #sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio ipywidgets
+  #sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
