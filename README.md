@@ -68,7 +68,7 @@ docker exec -it tljh-dw /bin/bash
 
 ## Login
 Login admin
- - admin:admin123
+ - admin:password
 ```
 http://{Server IP}:12000
 ```
