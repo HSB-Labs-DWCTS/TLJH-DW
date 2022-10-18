@@ -26,8 +26,8 @@ doInstall() {
   
   # Extension
   # conda-forge
-  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio nbconvert
-  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard
+  sudo -E /opt/tljh/user/bin/conda install -c conda-forge --yes jupyterlab-git jupyterlab-github jupyterlab_execute_time jupyterlab-variableinspector jupyterlab-drawio ipywidgets
+  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
