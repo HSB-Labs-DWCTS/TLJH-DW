@@ -5,7 +5,7 @@
 ## Prerequisites
 ### install build tools
 ```
-sudo apt-get install -y install build-essential
+sudo apt-get install -y build-essential
 ```
 ### Node.js
 ```
