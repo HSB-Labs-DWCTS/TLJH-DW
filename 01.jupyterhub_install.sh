@@ -44,7 +44,7 @@ doInstall() {
     python-lsp-server \
     ipywidgets \
     jupyter-archive
-  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert
+  sudo -E /opt/tljh/user/bin/pip install jupyterlab-nvdashboard nbconvert watermark
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
