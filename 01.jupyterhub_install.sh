@@ -48,8 +48,7 @@ doInstall() {
   
   sudo -E /opt/tljh/user/bin/pip install \
     jupyterlab-nvdashboard \
-    nbconvert \
-    watermark
+    nbconvert
     
   # Extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
