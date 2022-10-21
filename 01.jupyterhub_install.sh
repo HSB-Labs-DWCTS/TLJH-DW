@@ -3,7 +3,7 @@
 set -e
 
 #
-# Install JupyterHub (bare metal)
+# install jupyterHub (bare metal)
 #
 
 doInstall() {
@@ -16,7 +16,7 @@ doInstall() {
   
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
   
-  # curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
+  # curl -L https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
   curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin admin
   
   # Settings
@@ -46,6 +46,7 @@ doInstall() {
     ipywidgets \
     jupyter-archive
   
+  # pypi
   sudo -E /opt/tljh/user/bin/pip install \
     jupyterlab-nvdashboard \
     nbconvert
