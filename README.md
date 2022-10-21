@@ -17,13 +17,13 @@ sudo apt-get install -y nodejs
 `wget` 또는 `curl` 로 설치 합니다.
 ### wget
 ```
-sudo wget -qO- https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/01.jupyterhub_install.sh | sh
+sudo wget -qO- https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/baremetal/jupyterhub_install.sh | sh
 ```
 
 
 ### curl
 ```
-sudo curl -L https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/01.jupyterhub_install.sh | sh
+sudo curl -L https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/baremetal/jupyterhub_install.sh | sh
 ```
 
 ## Login
