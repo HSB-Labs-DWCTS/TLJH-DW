@@ -45,7 +45,7 @@ sudo wget -qO- https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jup
 
 ### curl
 ```
-sudo curl -sL https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/docker/docker_install.sh | sh
+sudo curl -L https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/docker/docker_install.sh | sh
 ```
 
 ## Add Docker group
