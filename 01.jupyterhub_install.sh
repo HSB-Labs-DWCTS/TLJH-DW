@@ -9,9 +9,13 @@ set -e
 doInstall() {
   sudo apt update
   # sudo apt upgrade --yes
+  
   sudo apt install -y build-essential
-  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
+  
   sudo apt install -y python3 python3-dev git curl
+  
+  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
+  
   # curl -L https://raw.githubusercontent.com/HSB-Labs-DWCTS/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
   curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin admin
   
