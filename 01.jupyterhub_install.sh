@@ -7,31 +7,32 @@ set -e
 #
 
 doInstall() {
+  # update
   sudo apt update
-  # sudo apt upgrade --yes
+  # sudo apt upgrade -y
   
-  sudo apt install -y build-essential
-  
-  sudo apt install -y python3 python3-dev git curl
-  
+  # prerequisites
+  sudo apt install -y build-essential  
+  sudo apt install -y python3 python3-dev git curl  
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs
   
+  # installation
   curl -L https://raw.githubusercontent.com/hsb-labs-dwcts/the-littlest-jupyterhub-dwcts/main/bootstrap.py | sudo -E python3 - --admin admin
   
-  # Settings
-  # Change default User Interface for users
+  # settings
+  # change default user interface for users
   sudo tljh-config set user_environment.default_app jupyterlab
   
-  # Enable PAM Authenticator
+  # enable PAM authenticator
   # sudo tljh-config set auth.type jupyterhub.auth.PAMAuthenticator
   sudo tljh-config reload
   
-  # JupyterLab ko-KR Language Pack
+  # jupyterlab ko-KR language pack
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y \
     jupyterlab-language-pack-ko-KR
   # sudo sed -i 's/en_US/ko_KR/g' /home/jupyter-admin/.jupyter/lab/user-settings/@jupyterlab/translation-extension/plugin.jupyterlab-settings
   
-  # Extension
+  # extension
   # conda-forge
   sudo -E /opt/tljh/user/bin/conda install -c conda-forge -y \
     nodejs=16 \
@@ -50,10 +51,10 @@ doInstall() {
     jupyterlab-nvdashboard \
     nbconvert
     
-  # Extension list
+  # extension list
   # sudo /opt/tljh/user/bin/jupyter server extension list
   
-  # Config
+  # config
   # echo 'export PATH=$PATH:/opt/tljh/user/bin' >> ~/.bashrc
   # source ~/.bashrc
 }
